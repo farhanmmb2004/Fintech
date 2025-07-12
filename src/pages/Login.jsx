@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, User, Lock, Smartphone, CreditCard, Plane, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/Button.jsx';
 import { Input } from '@/components/ui/Input.jsx';
-import { Checkbox } from '@/components/ui/checkBox.jsx';
+import { Checkbox } from '@/components/ui/checkbox.jsx';
+
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
