@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button.jsx";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { User, Bell } from "lucide-react";
 
