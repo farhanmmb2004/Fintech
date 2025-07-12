@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, User, Lock, Smartphone, CreditCard, Plane, Gift } from 'lucide-react';
 import { Button } from '@/components/ui/button.jsx';
-import { Input } from '@/components/ui/Input.jsx';
+import { Input } from '@/components/ui/input.jsx';
 import { Checkbox } from '@/components/ui/checkbox.jsx';
 
 
