@@ -22,9 +22,7 @@ const App = () => (
           <Route
             path="/home"
             element={
-              <AppLayout>
-                <Home />
-              </AppLayout>
+              <Home/>
             }
           />
           <Route
