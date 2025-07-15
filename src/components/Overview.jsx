@@ -1,8 +1,9 @@
 import React from 'react';
 import StatCard from './StatCard';
 import ChartCard from './ChartCard';
+import DataTable from './DataTable';
 import { Calendar, Download } from 'lucide-react';
-
+import  transactionData  from '../data/Transactions';
 const Overview = () => {
   const incomeData = [
     { name: 'Mon', value: 1200 },
@@ -46,19 +47,34 @@ const Overview = () => {
     }
   ];
 
+  // Transaction table data
+  const transactionColumns = [
+    { key: 'txnId', label: 'Txn Id' },
+    { key: 'txnDate', label: 'Txn Date' },
+    { key: 'service', label: 'Service' },
+    { key: 'proName', label: 'Pro Name' },
+    { key: 'accountNo', label: 'Account No' },
+    { key: 'amount', label: 'Amount' },
+    { key: 'wallet', label: 'Wallet' },
+    { key: 'status', label: 'Status' },
+    { key: 'action', label: 'Action' }
+  ];
+
+  
+
   return (
     <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Overview</h1>
-          <p className="text-gray-600 mt-1">Today is 19 September 2022</p>
+          <p className="text-gray-600 mt-1">Today is 15 July 2025</p>
         </div>
         
         <div className="flex items-center space-x-3">
           <div className="flex items-center space-x-2 bg-white border border-gray-300 rounded-lg px-3 py-2">
             <Calendar className="w-4 h-4 text-gray-500" />
-            <span className="text-sm text-gray-700">Jul 2 - Today 2022</span>
+            <span className="text-sm text-gray-700">Jul 2 - Today 2025</span>
           </div>
           <button className="bg-white border border-gray-300 rounded-lg px-3 py-2 hover:bg-gray-50">
             <Download className="w-4 h-4 text-gray-700" />
@@ -108,6 +124,16 @@ const Overview = () => {
           data={spendingData}
         />
       </div>
+
+      {/* Recent Transactions Table */}
+      <DataTable 
+        title="Recent Transactions"
+        columns={transactionColumns}
+        data={transactionData}
+        pageSize={10}
+        searchable={true}
+        sortable={true}
+      />
 
       {/* Goals Section */}
       <div className="bg-white rounded-xl border border-gray-200 p-6">

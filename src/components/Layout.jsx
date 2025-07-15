@@ -10,15 +10,24 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50">
       <Sidebar isOpen={sidebarOpen} onToggle={toggleSidebar} />
       
-      <div className="flex-1 flex flex-col">
+      {/* Main content wrapper with proper margin for sidebar */}
+      <div className="transition-all duration-300 ease-in-out lg:ml-64">
         <Header onMenuToggle={toggleSidebar} />
-        <main className="flex-1 overflow-auto">
+        <main className="min-h-screen overflow-auto">
           {children}
         </main>
       </div>
+
+      {/* Mobile overlay backdrop */}
+      {sidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={toggleSidebar}
+        />
+      )}
     </div>
   );
 };
