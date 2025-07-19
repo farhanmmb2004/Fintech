@@ -20,7 +20,7 @@ import GasLPG from "./pages/Bill Payment/GasLPG";
 import GasPipe from "./pages/Bill Payment/GasPip";
 import Broadband from "./pages/Bill Payment/Broadband";
 import Landline from "./pages/Bill Payment/Landline";
-import CableTV from "./pages/Bill Payment/Cabletv";
+import CableTV from "./pages/Bill Payment/CableTv";
 import Loanemi from "./pages/Bill Payment/Loanemi";
 
 const queryClient = new QueryClient();
