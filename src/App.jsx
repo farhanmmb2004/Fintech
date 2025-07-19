@@ -6,7 +6,6 @@ import Aeps from "./pages/Financial Inclusion/Aeps";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import AppLayout from "./layouts/AppLayout";
 import AepsDeposite from "./pages/Financial Inclusion/AepsDeposite";
 import ExpressTransfer from "./pages/Financial Inclusion/ExpressTransfer";
 import MoneyTransfer from "./pages/Financial Inclusion/MoneyTransfer";
@@ -22,11 +21,12 @@ import Broadband from "./pages/Bill Payment/Broadband";
 import Landline from "./pages/Bill Payment/Landline";
 import CableTV from "./pages/Bill Payment/CableTv";
 import Loanemi from "./pages/Bill Payment/Loanemi";
-
+import { ThemeProvider } from './contexts/ThemeContext';
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <ThemeProvider>
     <TooltipProvider>
       <Toaster />
       <Router>
@@ -150,6 +150,7 @@ const App = () => (
         </Routes>
       </Router>
     </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

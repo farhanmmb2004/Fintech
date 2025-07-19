@@ -78,24 +78,25 @@ const Sidebar = ({ isOpen, onToggle }) => {
 return (
     <>
       {/* Sidebar */}
-     <div className={`
-  fixed left-0 top-0 h-screen bg-transparent border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out
-  ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
-  lg:translate-x-0 lg:fixed lg:z-auto
-  w-64 flex flex-col
-`}>
+     <div className={`dark:bg-gray-900 dark:text-white
+        fixed left-0 top-0 h-screen bg-white border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+        lg:translate-x-0 lg:fixed lg:z-auto
+        w-64 flex flex-col
+      `}>
 
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
-              <Coins className="w-5 h-5 text-white" />
-            </div>
-            <h1 className="text-xl font-bold text-gray-800">SaralMoney</h1>
-          </div>
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+  <div className="flex items-center space-x-2">
+    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
+      <Coins className="w-5 h-5 text-white" />
+    </div>
+    <h1 className="text-xl font-bold text-gray-800 dark:text-white">SaralMoney</h1>
+  </div>
+
           <button 
             onClick={onToggle}
-            className="lg:hidden p-1 rounded-md hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
           >
             <X className="w-5 h-5" />
           </button>
@@ -110,7 +111,7 @@ return (
                   <div>
                     <button
                       onClick={() => toggleSubmenu(item.title)}
-                      className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                      className="w-full flex items-center justify-between px-3 py-2 text-sm text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <div className="flex items-center">
                         <item.icon className="w-5 h-5 mr-3 transition-transform duration-200" />
@@ -146,10 +147,10 @@ return (
                           >
                             <Link
   to={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${subItem.toLowerCase().replace(/\s+/g, '-')}`}
-  className="block px-3 py-1.5 text-sm text-gray-600 rounded-md hover:bg-gray-50 hover:text-gray-900 transition-all duration-200 hover:translate-x-1 hover:scale-105 active:scale-95 relative overflow-hidden group"
+  className="block px-3 py-1.5 text-sm text-gray-700 dark:text-gray-200 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:translate-x-1 hover:scale-105 active:scale-95 relative overflow-hidden group"
 >
   <span className="relative z-10">{subItem}</span>
-  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
 </Link>
                           </li>
                         ))}
@@ -157,20 +158,23 @@ return (
                     </div>
                   </div>
                 ) : (
-                  <Link
-                    to={item.url}
-                    className={`font-bold flex items-center px-3 py-2 text-sm rounded-lg transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group relative overflow-hidden ${
-                      isActive(item.url)
-                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
-                        : 'text-gray-700 hover:bg-gray-100'
-                    }`}
-                  >
-                    <item.icon className="w-5 h-5 mr-3 transition-transform duration-200 group-hover:scale-110" />
-                    <span className="relative z-10 ">{item.title}</span>
-                    {!isActive(item.url) && (
-                      <div className="font-bold absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                    )}
-                  </Link>
+                 <Link
+  to={item.url}
+  className={`flex items-center px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 group relative overflow-hidden
+    ${
+      isActive(item.url)
+        ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-r-2 border-blue-700'
+        : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
+    }`}
+>
+  <item.icon className="w-5 h-5 mr-3 transition-transform duration-200 group-hover:scale-110" />
+  <span className="relative z-10">{item.title}</span>
+  {!isActive(item.url) && (
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+  )}
+</Link>
+
+
                 )}
               </li>
             ))}
@@ -178,17 +182,17 @@ return (
         </nav>
 
         {/* Bottom Menu */}
-        <div className="border-t border-gray-200 p-3">
+        <div className="border-t border-gray-200 dark:border-gray-700 p-3">
           <ul className="space-y-1">
             {bottomMenuItems.map((item) => (
               <li key={item.title}>
                 <Link
                   to={item.url}
-                  className="flex items-center px-3 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group relative overflow-hidden"
+                  className="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] group relative overflow-hidden"
                 >
                   <item.icon className="w-5 h-5 mr-3 transition-transform duration-200 group-hover:scale-110" />
                   <span className="relative z-10">{item.title}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </Link>
               </li>
             ))}

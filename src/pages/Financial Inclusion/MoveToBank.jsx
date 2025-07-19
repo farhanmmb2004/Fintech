@@ -51,9 +51,9 @@ const MoveToBank = () => {
     }
   ];
 
-  return (
+return (
     <Layout>
-      <div className="p-6 bg-gray-50 min-h-screen">
+      <div className="p-6 bg-gray-50 dark:bg-gray-900 min-h-screen">
         <DataTable
           title="Payout Bank"
           columns={columns}
@@ -65,7 +65,7 @@ const MoveToBank = () => {
 
         {/* Add Bank Button */}
         <div className="flex justify-end mt-4">
-          <button className="px-5 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-sm">
+          <button className="px-5 py-2 bg-indigo-600 dark:bg-indigo-700 text-white rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-sm">
             Add Bank
           </button>
         </div>
