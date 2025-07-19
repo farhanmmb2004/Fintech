@@ -78,12 +78,13 @@ const Sidebar = ({ isOpen, onToggle }) => {
 return (
     <>
       {/* Sidebar */}
-      <div className={`
-        fixed left-0 top-0 h-screen bg-white border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
-        lg:translate-x-0 lg:fixed lg:z-auto
-        w-64 flex flex-col
-      `}>
+     <div className={`
+  fixed left-0 top-0 h-screen bg-transparent border-r border-gray-200 z-50 transition-transform duration-300 ease-in-out
+  ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+  lg:translate-x-0 lg:fixed lg:z-auto
+  w-64 flex flex-col
+`}>
+
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center space-x-2">
