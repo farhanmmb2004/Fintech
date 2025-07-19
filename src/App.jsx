@@ -17,7 +17,7 @@ import DTH from "./pages/Bill Payment/DTH";
 import Electricity from "./pages/Bill Payment/Electricity";
 import Water from "./pages/Bill Payment/Water";
 import GasLPG from "./pages/Bill Payment/GasLPG";
-import GasPipe from "./pages/Bill Payment/Gaspip";
+import GasPipe from "./pages/Bill Payment/GasPip";
 import Broadband from "./pages/Bill Payment/Broadband";
 import Landline from "./pages/Bill Payment/Landline";
 import CableTV from "./pages/Bill Payment/Cabletv";
