@@ -129,26 +129,27 @@ const Aeps = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex space-x-4">
-            <button
-              type="button"
-              className="px-6 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
-            >
-              Balance Enquiry
-            </button>
-            <button
-              type="button"
-              className="px-6 py-2 bg-green-600 dark:bg-green-700 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400"
-            >
-              Mini Statement
-            </button>
-            <button
-              type="button"
-              className="px-6 py-2 bg-purple-600 dark:bg-purple-700 text-white rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
-            >
-              Cash Withdrawal
-            </button>
-          </div>
+          <div className="flex flex-wrap gap-2 sm:space-x-4 sm:flex-nowrap">
+  <button
+    type="button"
+    className="px-6 py-2 bg-blue-600 dark:bg-blue-700 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
+  >
+    Balance Enquiry
+  </button>
+  <button
+    type="button"
+    className="px-6 py-2 bg-green-600 dark:bg-green-700 text-white rounded-lg hover:bg-green-700 dark:hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 dark:focus:ring-green-400"
+  >
+    Mini Statement
+  </button>
+  <button
+    type="button"
+    className="px-6 py-2 bg-purple-600 dark:bg-purple-700 text-white rounded-lg hover:bg-purple-700 dark:hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400"
+  >
+    Cash Withdrawal
+  </button>
+</div>
+
         </form>
       </div>
 
