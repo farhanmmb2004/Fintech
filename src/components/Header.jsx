@@ -1,12 +1,12 @@
 import React from 'react';
 import { Search, Settings, Menu, User, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext'; // import context
+import { useTheme } from '../contexts/ThemeContext';
 
 const Header = ({ onMenuToggle }) => {
-  const { darkMode, setDarkMode } = useTheme(); // use context
+  const { darkMode, setDarkMode } = useTheme();
 
   return (
-    <header className="bg-white dark:bg-gray-800 dark:shadow-gray-700/30 border-b border-gray-200 dark:border-gray-700 px-4 py-3">
+    <header className="w-full bg-white dark:bg-gray-800 dark:shadow-gray-700/30 border-b border-gray-200 dark:border-gray-700 px-4 py-3">
       <div className="flex items-center justify-between">
         {/* Left Section */}
         <div className="flex items-center">
